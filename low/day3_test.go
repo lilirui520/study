@@ -72,5 +72,16 @@ func ExportToCSV(file string, columns []string, totalValues [][]string) {
 }
 
 func TestDay3Main(t *testing.T) {
-	//db,err := sql.Open("mysql","root:123456@")
+	db, err := sql.Open("mysql", "root:a123456@ tcp(127.0.0.1:3306)/study?char-set=uft8")
+	defer db.Close()
+	if err != nil {
+		panic(err.Error())
+	}
+	for _, table := range tables {
+		go SqlQuery(db, table, ch)
+	}
+	for i := 0; i < count; i++ {
+		<-ch
+	}
+	fmt.Println("完成！")
 }
