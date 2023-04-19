@@ -1,4 +1,4 @@
-package low
+package chapter01
 
 import (
 	"database/sql"
