@@ -14,14 +14,19 @@ type User struct {
 	Password string
 }
 
-//func queryMultiRow() (User[]) {
-//	rows, err := db.Query("select uid,name,phone,email from `user` where uid > ?", 0)
-//	if err != nil {
-//		fmt.Printf("query err: %v", err)
-//	}
-//	defer rows.Close()
-//
-//}
+func queryMultiRow() (User[]) {
+	rows, err := db.Query("select uid,name,phone,email from `user` where uid > ?", 0)
+	if err != nil {
+		fmt.Printf("query err: %v", err)
+	}
+	defer rows.Close()
+	for _, v := range rows {
+		
+	}
+	append(User, )
+	rows.
+
+}
 
 func prMain(t *testing.T) {
 	m := make(map[int]string)
