@@ -78,7 +78,3 @@ func prMain(t *testing.T) {
 	//导出
 	ExportCSV(filename, column)
 }
-
-func queryMultiRows() {
-	panic("unimplemented")
-}
