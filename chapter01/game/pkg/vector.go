@@ -1,7 +1,6 @@
 package pkg
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -22,18 +21,17 @@ func (vector1 Vector) sub(vector2 Vector) Vector {
 
 //坐标点相乘
 
-func (vector1 Vector) multi(speed float32) Vector {
-	return Vector{vector1.X * speed, vector1.Y * speed}
+func (vector1 Vector) multi(Speed float32) Vector {
+	return Vector{vector1.X * Speed, vector1.Y * Speed}
 }
 
 //计算距离
 
 func (vector1 Vector) distanceTo(vector2 Vector) float32 {
-	dX := vector1.X * vector2.X
-	dY := vector1.Y * vector2.Y
+	dX := vector1.X - vector2.X
+	dY := vector1.Y - vector2.Y
 	//根号
 	distance := math.Sqrt(float64(dX*dX + dY*dY))
-	fmt.Printf("%v,%v,%v \n", dX, dY, float32(distance))
 	return float32(distance)
 }
 

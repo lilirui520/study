@@ -31,6 +31,7 @@ func (p Player) IsArrived() bool {
 
 // 更新玩家位置
 func (p *Player) Update() {
+	//目标位置减去当前位置
 	directionVector := p.TargetVector.sub(p.CurrentVector)
 	normalizeVector := directionVector.normalize()
 	pointChange := normalizeVector.multi(p.Speed)

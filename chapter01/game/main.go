@@ -9,11 +9,11 @@ import (
 
 func main() {
 	//创建玩家，设置玩家速度
-	var p = pkg.NewPlayer(0.6)
+	var p = pkg.NewPlayer(0.8)
 	fmt.Println(p.Speed)
 	//设置玩家目标位置
-	p.MoveTo(pkg.Vector{6, 8})
-	p.CurrentVector = pkg.Vector{9, 13}
+	p.MoveTo(pkg.Vector{50, 50})
+	p.CurrentVector = pkg.Vector{9, 12}
 	fmt.Println(p.TargetVector)
 
 	for !p.IsArrived() {
