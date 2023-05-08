@@ -1,5 +1,6 @@
 package chapter01
 
+//空接口的用法
 import (
 	"fmt"
 	"testing"
