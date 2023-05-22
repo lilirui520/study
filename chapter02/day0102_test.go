@@ -20,6 +20,19 @@ func Funcc() (r int) {
 	}()
 	return 0
 }
+
+func Funccc() []func() {
+	b := make([]func(), 2, 2)
+	for i := 0; i < 2; i++ {
+		b[i] = (func(j int) func() {
+			return func() {
+				fmt.Println(&j, j)
+			}
+		})(i)
+	}
+	return b
+}
+
 func Test_day0102Main(t *testing.T) {
 
 	a := Func()
@@ -30,4 +43,9 @@ func Test_day0102Main(t *testing.T) {
 
 	//defer后进先出
 	fmt.Println(Funcc())
+
+	//定一个闭包
+	arr := Funccc()
+	arr[0]()
+	arr[1]()
 }
