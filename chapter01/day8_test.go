@@ -38,3 +38,13 @@ func TestDay8Main(t *testing.T) {
 
 	//time.Alter函数 也是可以使用超时机制实现中
 }
+
+/**
+for len(c) > 0 {
+	value:= <-c
+	//使用value
+}
+for len(c) < cap(c) {
+	c < - aValue
+}
+**/
